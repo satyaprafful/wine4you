@@ -1,0 +1,21 @@
+Catherine Xu, Satya Prafful Tangirala, Tatiana Tsygankova
+NETS 150 Final Project Summary: Wine 4 You
+---------------------------------------------------------------------------------------
+
+How many times have you walked up to a shelf of wine bottles and had no idea what you might like? Or have you ever had a disagreement with a friend over what wine to get? No fear, Wine 4 You has your back.  
+
+Our application analyzes a database of wines and their characteristics, such as acidity, pH, density etc. Our program has two functions. First, the user inputs their favorite wines, and the characteristics of wine they value the most, and the our algorithm finds similar wines that the user might enjoy. The database has a value for each characteristic of every wine. For example, Wine 6 has a total sulfur content of 34. We use Document Search/Information Retrieval to parse the the data and get the values for each of the characteristics for each of the wines. We store these values in a Wine object, such that each wine contains its own values for each of the characteristics. Once the user inputs their three favorite wines and three most important characteristics, we average the values of each of the characteristics and use that to create another wine object that represents the user’s preference. We then calculate the difference of every other wine in the data from the preferred wine by finding the difference in value for each characteristic and dividing by the range of values for that characteristic. We also weight the values of the preferred characteristics more heavily, in order to make them influence the returned values more. Then we return the wines with the smallest variance. 
+
+For the second functionality, our algorithm creates a graph of the wines. We add an edge between two wines if the total characteristic variance is less than a certain threshold value. We determined the ideal threshold by conducting experiments with reference Source and Target Wines. By systematically lowering the threshold, we determined its optimal value as 0.7. This ensures that Wines that are relatively different from each other will not have a path between them. We utilize Dijkstra’s shortest path algorithm to find the shortest path between two different wines. This is equivalent to the spectrum of Wines between the two input Wines. If two different people like two very different wines, the algorithm finds the ideal spectrum that transitions from one Wine to the other. The median in the transition would be the ideal compromise, since it has approximately the same amount of difference in variance from the two wines. N.B. The definition of ‘accurate’ from the User Manual refers to the ideal spectrum (path) if one exists.
+
+Our project is an Implementation Project, and we wrote a program that finds the most similar wines to the input, or takes in two different wines and returns options that could be liked by someone who likes either of the two wines. Our user interface provides and explains all the options available, and gives instructions for how to retrieve the data you seek. 
+
+Limitations and Potential Extensions: Presently we take in 1999 Data Points for Wine, which could easily be expanded. The Program would also be served better with non-anonymized data. Secondly, our Program’s Functionality 2 runs in O(n^2) time, which we attempted to mitigate by creating the Graph only once prior to running the application. As a result, all subsequent searches are done much faster. 
+
+A natural extension to our second functionality would be for Users attempting to change their diet. In this case, the algorithm would just use a database of food products instead of wine. Suppose a user liked a certain kind of food/cuisine however wanted to switch to another perhaps vegan - centric diet, our spectrum (path) output would provide that user with a smooth transition (minimal variance) from one diet to the other. 
+
+Work Breakdown: 
+Catherine Xu: Parsing the document data, Calculations for Wine variances
+Satya Prafful Tangirala: Creation of the Graph/Graph algorithms/Program Design
+Tasya Tsygankova: User Interface and GUI, Creation of Wine Objects
+All: Other smaller methods within the classes, Creation of Data Structures, Write-up, User Manual
