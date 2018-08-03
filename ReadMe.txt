@@ -1,5 +1,4 @@
-Catherine Xu, Satya Prafful Tangirala, Tatiana Tsygankova
-NETS 150 Final Project Summary: Wine 4 You
+Project Summary: Wine 4 You
 ---------------------------------------------------------------------------------------
 
 How many times have you walked up to a shelf of wine bottles and had no idea what you might like? Or have you ever had a disagreement with a friend over what wine to get? No fear, Wine 4 You has your back.  
@@ -13,9 +12,3 @@ Our project is an Implementation Project, and we wrote a program that finds the 
 Limitations and Potential Extensions: Presently we take in 1999 Data Points for Wine, which could easily be expanded. The Program would also be served better with non-anonymized data. Secondly, our Program’s Functionality 2 runs in O(n^2) time, which we attempted to mitigate by creating the Graph only once prior to running the application. As a result, all subsequent searches are done much faster. 
 
 A natural extension to our second functionality would be for Users attempting to change their diet. In this case, the algorithm would just use a database of food products instead of wine. Suppose a user liked a certain kind of food/cuisine however wanted to switch to another perhaps vegan - centric diet, our spectrum (path) output would provide that user with a smooth transition (minimal variance) from one diet to the other. 
-
-Work Breakdown: 
-Catherine Xu: Parsing the document data, Calculations for Wine variances
-Satya Prafful Tangirala: Creation of the Graph/Graph algorithms/Program Design
-Tasya Tsygankova: User Interface and GUI, Creation of Wine Objects
-All: Other smaller methods within the classes, Creation of Data Structures, Write-up, User Manual
